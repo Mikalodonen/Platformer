@@ -45,3 +45,5 @@ position = Vector2( 524, 142 )
 
 [node name="Player2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 354, 224 )
+speed = Vector2( 350, 1200 )
+gravity = 2000.0
