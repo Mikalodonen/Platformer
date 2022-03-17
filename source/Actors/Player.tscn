@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://sprites/walk2.png" type="Texture" id=1]
+[ext_resource path="res://sprites/idle.png" type="Texture" id=2]
+[ext_resource path="res://sprites/walk3.png" type="Texture" id=3]
+[ext_resource path="res://sprites/walk 1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/hop.png" type="Texture" id=5]
+[ext_resource path="res://source/Actors/Player.gd" type="Script" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "fall",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "jump",
+"speed": 0.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 37.5, 44.25 )
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 26, -76 )
+collision_mask = 8
+script = ExtResource( 6 )
+speed = Vector2( 300, 1200 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 1 )
+scale = Vector2( 0.353604, 0.229911 )
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.5, 7.75 )
+shape = SubResource( 2 )
