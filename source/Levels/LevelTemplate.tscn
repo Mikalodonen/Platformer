@@ -51,3 +51,6 @@ gravity = 2000.0
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 872, 405 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
