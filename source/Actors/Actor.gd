@@ -12,4 +12,3 @@ export var gravity: = 4000.0
 #var _velocity: = Vector2(300, 0)
 var _velocity: = Vector2.ZERO
 
-# 1 time og 10 min

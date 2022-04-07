@@ -34,6 +34,7 @@ margin_right = 219.0
 margin_bottom = 69.0
 
 [node name="PlayBut" parent="menu" instance=ExtResource( 3 )]
+text = "Play"
 next_scene_path = "res://source/Levels/Level1test.tscn"
 
 [node name="QuitBut" parent="menu" instance=ExtResource( 4 )]

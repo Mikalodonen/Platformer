@@ -6,7 +6,8 @@ func _on_Enemy_stomp_area_entered(area):
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 
 func _on_Enemy_stomp_body_entered(body):
-	queue_free()
+	die()
+	
 
 func _physics_process(delta: float) -> void:
 	
@@ -42,6 +43,10 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vecto
 	out.y = -impulse
 	return out
 
+func die() -> void:
+	PlayerData.death +=1
+	queue_free()
+	
 #alt her under bruges til animationerne
 func _process(delta):
 	if Input.is_action_pressed("move_right"):
