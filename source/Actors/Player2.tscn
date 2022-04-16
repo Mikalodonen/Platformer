@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://sprites/walk2.png" type="Texture" id=1]
-[ext_resource path="res://source/Actors/Player2.gd" type="Script" id=2]
+[ext_resource path="res://source/Test/Player2Test.gd" type="Script" id=2]
 [ext_resource path="res://sprites/walk3.png" type="Texture" id=3]
 [ext_resource path="res://sprites/idle.png" type="Texture" id=4]
 [ext_resource path="res://sprites/walk 1.png" type="Texture" id=5]
@@ -33,18 +33,61 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5, 71.5 )
 
-[node name="Player" type="KinematicBody2D"]
-position = Vector2( 225, 261 )
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 28.5, 73 )
+
+[node name="Player2" type="KinematicBody2D"]
+position = Vector2( 29, -73 )
 collision_mask = 8
 script = ExtResource( 2 )
-speed = Vector2( 350, 1600 )
+speed = 60
+jump_power = 900
+gravity = 25
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 21.1875, -97.25 )
+position = Vector2( -0.1875, -10.2499 )
 scale = Vector2( 0.232545, 0.36942 )
 frames = SubResource( 2 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 21.5, -86.5 )
+position = Vector2( 0.125, 0.500107 )
 shape = SubResource( 1 )
+
+[node name="RightWallRaycast1" type="RayCast2D" parent="."]
+position = Vector2( 13, 59 )
+enabled = true
+cast_to = Vector2( 17, 0 )
+collision_mask = 8
+
+[node name="RightWallRaycast2" type="RayCast2D" parent="."]
+position = Vector2( 14, -50 )
+enabled = true
+cast_to = Vector2( 17, 0 )
+collision_mask = 8
+
+[node name="LeftWallRaycast1" type="RayCast2D" parent="."]
+position = Vector2( -11, 59 )
+enabled = true
+cast_to = Vector2( -17, 0 )
+collision_mask = 8
+
+[node name="LeftWallRaycast2" type="RayCast2D" parent="."]
+position = Vector2( -14, -50 )
+enabled = true
+cast_to = Vector2( -17, 0 )
+collision_mask = 8
+
+[node name="Enemy stomp" type="Area2D" parent="."]
+position = Vector2( 0, 20 )
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy stomp"]
+modulate = Color( 0, 0.180392, 1, 1 )
+position = Vector2( 0.5, -21 )
+shape = SubResource( 3 )
+
+[connection signal="area_entered" from="Enemy stomp" to="." method="_on_Enemy_stomp_area_entered"]
+[connection signal="body_entered" from="Enemy stomp" to="." method="_on_Enemy_stomp_body_entered"]
