@@ -89,7 +89,7 @@ func dash():
 		vel = dash_direction.normalized() * 2000
 		can_dash = false
 		dashing = true # turn off gravity while dashing
-		yield(get_tree().create_timer(0.5), "timeout")
+		yield(get_tree().create_timer(0.2), "timeout")
 		dashing = false
 
 
