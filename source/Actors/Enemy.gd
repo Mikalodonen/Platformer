@@ -7,7 +7,7 @@ func _ready() -> void:
 	set_physics_process(false)
 
 func _on_Stomp_body_entered(body):
-	if PlayerData.dashing == true or body.global_position.y > get_node("Stomp").global_position.y:
+	if body.global_position.y > get_node("Stomp").global_position.y:
 		return
 	die()
 #	if body.global_position.y > get_node("Stomp").global_position.y:
