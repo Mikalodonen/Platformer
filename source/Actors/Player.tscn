@@ -14,27 +14,27 @@ animations = [ {
 "name": "idle",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": false,
-"name": "jump",
-"speed": 0.0
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 1 ) ],
 "loop": false,
 "name": "fall",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk",
-"speed": 12.0
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "jump",
+"speed": 0.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 37.5, 44.25 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 41.25, 45.5 )
+extents = Vector2( 39.5, 45.5 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 26, -76 )
@@ -83,7 +83,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy stomp"]
 modulate = Color( 0, 0.180392, 1, 1 )
-position = Vector2( 0.75, 6.5 )
+position = Vector2( 1.5, 6.5 )
 shape = SubResource( 3 )
 
 [connection signal="area_entered" from="Enemy stomp" to="." method="_on_Enemy_stomp_area_entered"]

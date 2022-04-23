@@ -3,6 +3,7 @@ extends Node
 signal score_updated
 signal player_died
 
+var dashing = false
 var score: = 0 setget set_score
 var death: = 0 setget set_death
 

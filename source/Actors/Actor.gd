@@ -3,7 +3,7 @@ class_name Actor
 
 const FLOOR_NORMAL = Vector2.UP
 
-export var speed: = Vector2(300.0, 1000.0)
+export var speed: = Vector2(200.0, 1000.0)
 
 #hvor hurtigt man falder
 export var gravity: = 4000.0

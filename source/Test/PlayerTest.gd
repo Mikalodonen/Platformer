@@ -14,7 +14,7 @@ var vel = Vector2()
 var jumps_left = 2
 var dash_direction = Vector2(1,0)
 var can_dash = false
-var dashing = false
+var dashing = PlayerData.dashing
 
 
 func _physics_process(delta):
@@ -27,7 +27,8 @@ func _physics_process(delta):
 	vel = move_and_slide(vel, Vector2.UP)
 
 func _on_Enemy_stomp_body_entered(body):
-	die()
+	if not dashing:
+		die()
 
 func run(delta):
 	if Input.is_action_pressed("move_right"):
@@ -92,7 +93,6 @@ func dash():
 		yield(get_tree().create_timer(0.2), "timeout")
 		dashing = false
 
-
 func next_to_wall():
 	return next_to_left_wall() or next_to_right_wall()
 	
@@ -128,3 +128,4 @@ func handle_textures():
 
 	if not running and is_on_floor():
 		$AnimatedSprite.play("idle")
+	

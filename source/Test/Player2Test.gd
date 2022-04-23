@@ -13,8 +13,8 @@ var vel = Vector2()
 
 var jumps_left = 2
 var dash_direction = Vector2(1,0)
-var can_dash = false
-var dashing = false
+#var can_dash = false
+#var dashing = false
 
 
 func _physics_process(delta):
@@ -67,8 +67,8 @@ func friction():
 
 
 func gravity():
-	if not dashing:
-		vel.y += gravity
+#	if not dashing:
+	vel.y += gravity
 	if vel.y > 800: 
 		vel.y = 800 # clamp falling speed
 	if next_to_wall() and vel.y > 100: 
