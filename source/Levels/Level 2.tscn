@@ -9,7 +9,7 @@
 [ext_resource path="res://source/Objects/Portal2D.tscn" type="PackedScene" id=7]
 [ext_resource path="res://source/UserInterface/UserInterface.tscn" type="PackedScene" id=8]
 [ext_resource path="res://source/Actors/wall.tscn" type="PackedScene" id=9]
-[ext_resource path="res://source/Levels/Level 2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://source/Levels/Level 3.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
