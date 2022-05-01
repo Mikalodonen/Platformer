@@ -87,6 +87,7 @@ func dash():
 		dash_direction = Vector2(-1,0)
 
 	if Input.is_action_just_pressed("bash") and can_dash:
+		$AnimatedSprite.play("bash")
 		vel = dash_direction.normalized() * 2000
 		can_dash = false
 		dashing = true # turn off gravity while dashing
@@ -110,10 +111,10 @@ func die() -> void:
 	queue_free()
 
 func handle_textures():
-	if not is_on_floor() and Input.is_action_pressed("jump"):
+	if not dashing and not is_on_floor() and Input.is_action_pressed("jump"):
 		$AnimatedSprite.play("jump")
 
-	if not is_on_floor() and vel.y > 0:
+	if not dashing and not is_on_floor() and vel.y > 0:
 		$AnimatedSprite.play("fall")
 
 	if is_on_floor() and next_to_left_wall():
@@ -124,9 +125,9 @@ func handle_textures():
 		$AnimatedSprite.flip_h = true
 	
 	var running = Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right") and is_on_floor()
-	if running and is_on_floor() and not next_to_right_wall():
+	if not dashing and running and is_on_floor() and not next_to_right_wall():
 		$AnimatedSprite.play("walk")
 
-	if not running and is_on_floor():
+	if not dashing and not running and is_on_floor():
 		$AnimatedSprite.play("idle")
 	

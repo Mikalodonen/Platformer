@@ -26,7 +26,8 @@ func _physics_process(delta):
 	vel = move_and_slide(vel, Vector2.UP)
 
 func _on_Enemy_stomp_body_entered(body):
-	die()
+	if not body is Wall:
+		die()
 
 func run(delta):
 	if Input.is_action_pressed("move_right2"):
