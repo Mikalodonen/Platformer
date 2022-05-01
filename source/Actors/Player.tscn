@@ -1,50 +1,66 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://sprites/walk2.png" type="Texture" id=1]
-[ext_resource path="res://sprites/idle.png" type="Texture" id=2]
-[ext_resource path="res://sprites/walk3.png" type="Texture" id=3]
-[ext_resource path="res://sprites/walk 1.png" type="Texture" id=4]
-[ext_resource path="res://sprites/hop.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Player 1/Bash.PNG" type="Texture" id=1]
+[ext_resource path="res://sprites/Player 1/Fall.PNG" type="Texture" id=2]
+[ext_resource path="res://sprites/Player 1/Walk2 (2).PNG" type="Texture" id=3]
+[ext_resource path="res://sprites/Player 1/Jump.PNG" type="Texture" id=4]
+[ext_resource path="res://sprites/Player 1/Walk3 (2).PNG" type="Texture" id=5]
 [ext_resource path="res://source/Test/PlayerTest.gd" type="Script" id=6]
+[ext_resource path="res://sprites/Player 1/Idle1.PNG" type="Texture" id=7]
+[ext_resource path="res://sprites/Player 1/Idle2.PNG" type="Texture" id=8]
+[ext_resource path="res://sprites/Player 1/Walk1.PNG" type="Texture" id=9]
+[ext_resource path="res://sprites/Player 1/Push.PNG" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": false,
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
 "name": "idle",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "bash",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": false,
 "name": "jump",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 3 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "walk",
-"speed": 12.0
+"speed": 9.0
 }, {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": false,
 "name": "fall",
 "speed": 0.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "push",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 37.5, 44.25 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 39.5, 45.5 )
+extents = Vector2( 39.5, 46 )
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 26, -76 )
+position = Vector2( -3, -69 )
+scale = Vector2( 0.498325, 0.456468 )
 collision_mask = 8
 script = ExtResource( 6 )
-speed = 45
+speed = 20
+jump_power = 600
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, 1 )
-scale = Vector2( 0.353604, 0.229911 )
+position = Vector2( 54.1815, 15.3351 )
+scale = Vector2( 0.181292, 0.126987 )
 frames = SubResource( 1 )
 animation = "idle"
 
@@ -83,7 +99,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy stomp"]
 modulate = Color( 0, 0.180392, 1, 1 )
-position = Vector2( 1.5, 6.5 )
+position = Vector2( 1.5, 6 )
 shape = SubResource( 3 )
 
 [connection signal="area_entered" from="Enemy stomp" to="." method="_on_Enemy_stomp_area_entered"]

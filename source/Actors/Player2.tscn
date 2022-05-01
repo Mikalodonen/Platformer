@@ -1,33 +1,41 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://sprites/walk2.png" type="Texture" id=1]
+[ext_resource path="res://sprites/Player 2/walk 2.PNG" type="Texture" id=1]
 [ext_resource path="res://source/Test/Player2Test.gd" type="Script" id=2]
-[ext_resource path="res://sprites/walk3.png" type="Texture" id=3]
-[ext_resource path="res://sprites/idle.png" type="Texture" id=4]
-[ext_resource path="res://sprites/walk 1.png" type="Texture" id=5]
-[ext_resource path="res://sprites/hop.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Player 2/walk 3.PNG" type="Texture" id=3]
+[ext_resource path="res://sprites/Player 2/walk 4.PNG" type="Texture" id=4]
+[ext_resource path="res://sprites/Player 2/Wall.PNG" type="Texture" id=5]
+[ext_resource path="res://sprites/Player 2/Fall.PNG" type="Texture" id=6]
+[ext_resource path="res://sprites/Player 2/Idle.PNG" type="Texture" id=7]
+[ext_resource path="res://sprites/Player 2/Jump.PNG" type="Texture" id=8]
+[ext_resource path="res://sprites/Player 2/walk 1.PNG" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": false,
 "name": "idle",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": false,
 "name": "jump",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "walk",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": false,
 "name": "fall",
 "speed": 0.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "wall",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -38,17 +46,19 @@ extents = Vector2( 28.5, 73 )
 
 [node name="Player2" type="KinematicBody2D"]
 position = Vector2( 29, -73 )
+scale = Vector2( 0.866078, 0.501607 )
 collision_mask = 8
 script = ExtResource( 2 )
-speed = 60
-jump_power = 900
+speed = 30
+jump_power = 750
 gravity = 25
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.1875, -10.2499 )
-scale = Vector2( 0.232545, 0.36942 )
+position = Vector2( -18.4741, 25.9167 )
+scale = Vector2( 0.135109, 0.194824 )
 frames = SubResource( 2 )
-animation = "idle"
+animation = "walk"
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.125, 0.500107 )

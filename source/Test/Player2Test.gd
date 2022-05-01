@@ -99,10 +99,10 @@ func handle_textures():
 		$AnimatedSprite.play("fall")
 
 	if not is_on_floor() and next_to_left_wall():
-		$AnimatedSprite.play("walk")
+		$AnimatedSprite.play("wall")
 		$AnimatedSprite.flip_h = false
 	if not is_on_floor() and next_to_right_wall():
-		$AnimatedSprite.play("walk")
+		$AnimatedSprite.play("wall")
 		$AnimatedSprite.flip_h = true
 	var running = Input.is_action_pressed("move_left2") or Input.is_action_pressed("move_right2") and is_on_floor()
 	if running and is_on_floor():
