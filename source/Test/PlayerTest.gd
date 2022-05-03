@@ -117,15 +117,15 @@ func handle_textures():
 	if not dashing and not is_on_floor() and vel.y > 0:
 		$AnimatedSprite.play("fall")
 
-	if is_on_floor() and next_to_left_wall():
+	if not dashing and is_on_floor() and next_to_left_wall():
 		$AnimatedSprite.play("push")
-		$AnimatedSprite.flip_h = false
-	if is_on_floor() and next_to_right_wall():
+#		$AnimatedSprite.flip_h = false
+	if not dashing and is_on_floor() and next_to_right_wall():
 		$AnimatedSprite.play("push")
-		$AnimatedSprite.flip_h = true
+#		$AnimatedSprite.flip_h = true
 	
 	var running = Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right") and is_on_floor()
-	if not dashing and running and is_on_floor() and not next_to_right_wall():
+	if not dashing and running and is_on_floor() and not next_to_right_wall() and not next_to_left_wall():
 		$AnimatedSprite.play("walk")
 
 	if not dashing and not running and is_on_floor():
