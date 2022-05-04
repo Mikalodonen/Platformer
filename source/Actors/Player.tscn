@@ -81,13 +81,13 @@ cast_to = Vector2( 17, 0 )
 collision_mask = 8
 
 [node name="LeftWallRaycast1" type="RayCast2D" parent="."]
-position = Vector2( -30.1008, 50.3869 )
+position = Vector2( -26.0874, 50.3869 )
 enabled = true
 cast_to = Vector2( -17, 0 )
 collision_mask = 8
 
 [node name="LeftWallRaycast2" type="RayCast2D" parent="."]
-position = Vector2( -28.0941, -37.2425 )
+position = Vector2( -24.0807, -37.2425 )
 enabled = true
 cast_to = Vector2( -17, 0 )
 collision_mask = 8

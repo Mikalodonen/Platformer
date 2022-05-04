@@ -1,23 +1,23 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://sprites/Player 2/walk 2.PNG" type="Texture" id=1]
+[ext_resource path="res://sprites/Player 2/fixed/walk 4 (2).PNG" type="Texture" id=1]
 [ext_resource path="res://source/Test/Player2Test.gd" type="Script" id=2]
-[ext_resource path="res://sprites/Player 2/walk 3.PNG" type="Texture" id=3]
-[ext_resource path="res://sprites/Player 2/walk 4.PNG" type="Texture" id=4]
-[ext_resource path="res://sprites/Player 2/Wall.PNG" type="Texture" id=5]
-[ext_resource path="res://sprites/Player 2/Fall.PNG" type="Texture" id=6]
-[ext_resource path="res://sprites/Player 2/Idle.PNG" type="Texture" id=7]
-[ext_resource path="res://sprites/Player 2/Jump.PNG" type="Texture" id=8]
-[ext_resource path="res://sprites/Player 2/walk 1.PNG" type="Texture" id=9]
+[ext_resource path="res://sprites/Player 2/fixed/walk 1 (2).PNG" type="Texture" id=3]
+[ext_resource path="res://sprites/Player 2/fixed/walk 2 (2).PNG" type="Texture" id=4]
+[ext_resource path="res://sprites/Player 2/fixed/Idle (2).PNG" type="Texture" id=5]
+[ext_resource path="res://sprites/Player 2/fixed/Fall (2).PNG" type="Texture" id=6]
+[ext_resource path="res://sprites/Player 2/fixed/Jump (2).PNG" type="Texture" id=7]
+[ext_resource path="res://sprites/Player 2/fixed/Wall (2).PNG" type="Texture" id=8]
+[ext_resource path="res://sprites/Player 2/fixed/walk 3 (2).PNG" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": false,
 "name": "idle",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walk",
 "speed": 12.0
@@ -27,12 +27,12 @@ animations = [ {
 "name": "fall",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": false,
 "name": "wall",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": false,
 "name": "jump",
 "speed": 0.0
@@ -50,15 +50,14 @@ scale = Vector2( 0.866078, 0.501607 )
 collision_mask = 8
 script = ExtResource( 2 )
 speed = 30
-jump_power = 750
+jump_power = 725
 gravity = 25
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -18.4741, 25.9167 )
-scale = Vector2( 0.135109, 0.194824 )
+position = Vector2( 2.30927, 0 )
+scale = Vector2( 0.103707, 0.186468 )
 frames = SubResource( 2 )
-animation = "walk"
-frame = 3
+animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.125, 0.500107 )
