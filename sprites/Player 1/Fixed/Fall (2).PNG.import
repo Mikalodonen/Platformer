@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy_strong.png-3b29d79b64bdcc12ccf02974f51eca78.stex"
+path="res://.import/Fall (2).PNG-def2670d6453b2b050e01ec6e2b32c6d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://source/Test/enemy_strong.png"
-dest_files=[ "res://.import/enemy_strong.png-3b29d79b64bdcc12ccf02974f51eca78.stex" ]
+source_file="res://sprites/Player 1/Fixed/Fall (2).PNG"
+dest_files=[ "res://.import/Fall (2).PNG-def2670d6453b2b050e01ec6e2b32c6d.stex" ]
 
 [params]
 
