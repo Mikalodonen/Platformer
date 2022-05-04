@@ -18,9 +18,9 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": false,
-"name": "bash",
+"name": "jump",
 "speed": 0.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 7 ) ],
@@ -28,9 +28,9 @@ animations = [ {
 "name": "walk",
 "speed": 9.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": false,
-"name": "fall",
+"name": "bash",
 "speed": 0.0
 }, {
 "frames": [ ExtResource( 9 ) ],
@@ -38,9 +38,9 @@ animations = [ {
 "name": "push",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": false,
-"name": "jump",
+"name": "fall",
 "speed": 0.0
 } ]
 
