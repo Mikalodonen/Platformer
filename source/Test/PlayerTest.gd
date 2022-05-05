@@ -42,7 +42,7 @@ func run(delta):
 func jump():
 	# I can jump when I'm on floor or next to the wall
 	if is_on_floor():
-		jumps_left = 1 # Recharge double-jump. 
+		jumps_left = 1 # Recharge jump. 
 	
 	if Input.is_action_just_pressed("jump") and jumps_left > 0:
 		if vel.y > 0: vel.y = 0 # if I'm falling - ignore fall velocity
