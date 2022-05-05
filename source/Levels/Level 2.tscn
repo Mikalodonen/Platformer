@@ -123,7 +123,7 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="LevelTemplate" type="Node2D"]
+[node name="LevelTemplate2" type="Node2D"]
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 layer = 100
