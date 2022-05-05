@@ -20,7 +20,7 @@ var dashing = PlayerData.dashing
 func _physics_process(delta):
 	run(delta)
 	jump()
-	bash()
+	dash()
 	friction()
 	gravity()
 	handle_textures()
@@ -77,7 +77,7 @@ func gravity():
 #		vel.y = 100 # wall slide
 
 
-func bash():
+func dash():
 	if is_on_floor():
 		can_dash = true # recharges when player touches the floor
 
