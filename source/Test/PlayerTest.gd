@@ -49,10 +49,10 @@ func jump():
 		vel.y -= jump_power
 		jumps_left -= 1
 		# Jump away from the wall
-		if not is_on_floor():
-			vel.x += jump_power
-		if not is_on_floor():
-			vel.x -= jump_power
+#		if not is_on_floor():
+#			vel.x += jump_power
+#		if not is_on_floor():
+#			vel.x -= jump_power
 	
 	# If I'm still going up and have released the jump button - cut off the jump and start falling down
 	if Input.is_action_just_released("jump") and vel.y < 0:
