@@ -23,16 +23,6 @@ animations = [ {
 "name": "jump",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "walk",
-"speed": 9.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": false,
-"name": "bash",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": false,
 "name": "push",
@@ -42,6 +32,16 @@ animations = [ {
 "loop": false,
 "name": "fall",
 "speed": 0.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "bash",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "walk",
+"speed": 9.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
