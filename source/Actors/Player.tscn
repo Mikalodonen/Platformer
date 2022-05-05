@@ -18,6 +18,16 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "jump",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "fall",
+"speed": 0.0
+}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": false,
 "name": "bash",
@@ -28,19 +38,9 @@ animations = [ {
 "name": "walk",
 "speed": 9.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": false,
-"name": "fall",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": false,
 "name": "push",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 1 ) ],
-"loop": false,
-"name": "jump",
 "speed": 0.0
 } ]
 
@@ -56,7 +56,7 @@ scale = Vector2( 0.498325, 0.456468 )
 collision_mask = 8
 script = ExtResource( 6 )
 speed = 20
-jump_power = 600
+jump_power = 620
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 15.3351 )
